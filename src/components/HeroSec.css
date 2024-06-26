@@ -1,0 +1,91 @@
+.hero-section{
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(270deg, #43a724 0%, #ffffff 100%);
+    /* background-image: url('../images/gradient-888106_1280.jpg'); */
+    /* grid-template-columns: 2rem  3fr 2rem;
+    grid-template-rows: 2rem 1fr 1fr 2fr 1fr 2rem; */
+    /* flex-wrap: wrap; */
+    margin-bottom: 50rem;
+    align-items: center;
+}
+
+
+.hero-text{
+    font-size: 54px;
+    font-weight: 800;
+    color: white;
+    /* #43a724; */
+}
+.hero-subtext{
+
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(31, 29, 29);
+} 
+  .hero-subtext {
+    max-width: 800px; 
+    margin: 0 auto; 
+    text-align: center;
+    padding: 0 20px; 
+    margin-bottom: 20px ;
+  }
+  .blinking-text{
+    margin-top: 0 ; 
+    font-size: 32px;
+    font-weight: 900;
+    color:  #43a724;
+  }
+  .PITN-NICS-Icons{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px ;
+  }
+  .pitb{
+    width: 200px; 
+    height:57px;
+  }
+  .nep{
+    width: 80px; 
+    height:80px;
+  }
+  .nics{
+    width: 100px; 
+    height:56px;
+  }
+.Buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    align-content: center;
+    justify-items: right;
+  }
+  
+  .portal {
+    width: 170px;
+    height: 40px;
+    border-radius: 10px 10px;
+    color: #2a531d;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border: 2px solid black;
+  }
+  .lms {
+    width: 170px;
+    height: 40px;
+    border-radius: 10px 10px;
+    color: #43a724;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border: 2px solid black;
+  }
+  .btn-text {
+    text-decoration: none;
+    color: #43a724;
+  }
