@@ -29,6 +29,7 @@ const Footer = () => {
                 Terms & Conditions
               </a>
             </div>
+
             <div className="footer-column">
               <p className="footer-text-header">Get Help</p>
              <a href="/trainingVids" className="footer-text">
@@ -40,11 +41,6 @@ const Footer = () => {
             </div>
             <div className="footer-column">
               <p className="footer-text-header">Socialize with us</p>
-
-
-
-
-
               <div className="socials-icons">
                 <a href="https://www.youtube.com/" target="_blank">
                 <FaYoutubeSquare className="icon youtube" />
@@ -59,10 +55,6 @@ const Footer = () => {
                     <FaTwitterSquare className="icon" />
                     </a>
                 </div>
-
-
-
-
               <p className="footer-text">+923453191638</p>
               <p className="footer-text">info@internee.pk</p>
               <p className="footer-text">
