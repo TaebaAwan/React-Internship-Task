@@ -11,22 +11,24 @@ import ContactUs from './components/pages/ContactUs';
 import Internships from './components/pages/Internships';
 import JobPortal from './components/pages/JobPortal';
 import Login from './components/pages/Login';
+import SignUp from './components/pages/SignUp';
+import ForgotPassword from './components/pages/ForgotPassword';
 import LMS from './components/pages/LMS';
 
 function App() {
   return (
     <div className="App">
         <NavBar />
-        {/* <HeroSection/> */}
         <Router>
           <Routes>
-            {/* <Route path='/' exact component={Home} /> */}
             <Route path="/" element={<Home />} />
             <Route path='/collaborations'  element={<Collaborations />} />
             <Route path='/contactUs'  element={<ContactUs />} />
             <Route path='/internship' element={<Internships />} />
             <Route path='/jobPortal'  element={<JobPortal />} />
             <Route path='/interneeLogin'  element={<Login />} />
+            <Route path='/interneeSignUp'  element={<SignUp />} />
+            <Route path='/forgotPassword'  element={<ForgotPassword />} />
             <Route path=' /LMS'  element={<LMS />} />
           </Routes>
         </Router>
