@@ -3,6 +3,10 @@ import { auth } from "../../../src/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "../../components/Form.css";
 
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+import { logIn, logOut } from '../../redux/slices/authSlice'
+
 function Login() {
   const [formData, setFormData] = useState({
     email: "",
@@ -24,7 +28,9 @@ function Login() {
       );
       console.log("User Signed In:", userCredential.user);
       alert("Login Successful");
-      window.location.href = "/";
+      // window.location.href = "/";
+      navigate('/');
+      dispatch(logIn());
     } catch (error) {
       if (
         (error.code === "auth/user-not-found" ||
@@ -41,6 +47,10 @@ function Login() {
       }
     }
   };
+  const navigate = useNavigate();
+
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn); 
+  const dispatch = useDispatch()
 
   return (
     <div className="form-tab">
@@ -73,9 +83,7 @@ function Login() {
           required
         />
         <br />
-        <button type="submit" className="submit-btn">
-          Login
-        </button>
+        <button type="submit" className="submit-btn" >Login</button>
       </form>
       <p>
         Don't have an account?<a href="/interneeSignUp"> SignUp </a>

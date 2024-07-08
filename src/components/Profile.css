@@ -1,0 +1,15 @@
+
+.btn-login {
+    width: 170px;
+    height: 40px;
+    border-radius: 10px 10px;
+    color: #43a724;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border: 2px solid black;
+  }
+  .btn-text {
+    text-decoration: none;
+    color: #43a724;
+  }

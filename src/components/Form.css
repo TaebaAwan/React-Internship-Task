@@ -18,14 +18,10 @@
     align-items: center;
     gap: 10px;
   }
-    /* margin-left: 100px;
-     margin-right: 100px;
-     margin-top: 60px; */
-
   .inputField{
     width: 250px;
     height: 30px;
-    color: white;
+    color: black;
     background-color: #ffffff;
     border: 1px solid black;
     border-radius: 5px  !important;

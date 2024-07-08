@@ -7,6 +7,7 @@ import {
     FaYoutubeSquare, 
     FaTwitterSquare
   } from "react-icons/fa";
+  import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -19,25 +20,15 @@ const Footer = () => {
             </div>
             <div className="footer-column">
               <p className="footer-text-header">Company</p>
-              <a href="/contactUs" className="footer-text">
-                Contact Us
-              </a>
-              <a href="/privacyPolicy" className="footer-text">
-                Privacy Policy
-              </a>
-              <a href="/terms" className="footer-text">
-                Terms & Conditions
-              </a>
+              <Link to="/contactUs" className="footer-text">Contact Us</Link>
+              <Link to="/privacyPolicy" className="footer-text">Privacy Policy</Link>
+              <Link to="/terms" className="footer-text">Terms & Conditions</Link>
             </div>
 
             <div className="footer-column">
               <p className="footer-text-header">Get Help</p>
-             <a href="/trainingVids" className="footer-text">
-                Training Videos
-              </a>
-              <a href="/help" className="footer-text">
-                Request Help
-              </a>
+              <Link to="/trainingVids" className="footer-text">Training Videos</Link>
+              <Link to="/help" className="footer-text">Request Help</Link>
             </div>
             <div className="footer-column">
               <p className="footer-text-header">Socialize with us</p>

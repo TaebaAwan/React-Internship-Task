@@ -97,18 +97,26 @@ function SignUp() {
         />
         <br />
         <label htmlFor="course" className="input-heading">
-          Course:
-        </label>
-        <input
-          type="text"
-          id="course"
-          name="course"
-          value={formData.course}
-          className="inputField"
-          onChange={handleChange}
-          required
-        />
-        <br />
+        Course:
+      </label>
+      <select
+        id="course"
+        name="course"
+        value={formData.course}
+        className="inputField"
+        onChange={handleChange}
+        required
+      >
+        <option value="" disabled>Select a course</option>
+        <option value="course1">Frontend Development</option>
+        <option value="course2">Backend Development</option>
+        <option value="course3">Python Development</option>
+        <option value="course4">Cyber Security</option>
+        <option value="course5">Cloud Computing</option>
+        <option value="course6">UI/UX</option>
+        <option value="course7">Chatbot Development</option>
+      </select>
+      <br />
         <button type="submit" className="submit-btn">
           Register
         </button>
