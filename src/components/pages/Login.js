@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import { auth } from "../../../src/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import "../../components/Form.css";
-
-import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
-import { logIn, logOut } from '../../redux/slices/authSlice'
+import { getFirestore } from "firebase/firestore";
+import { getDocs, where, collection, query } from "@firebase/firestore";
+import { useNavigate, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {
+  logIn,
+  logOut,
+  setUserEmail,
+  setUserId,
+} from "../../redux/slices/authSlice";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -17,6 +23,11 @@ function Login() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const db = getFirestore();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -26,11 +37,22 @@ function Login() {
         formData.email,
         formData.password
       );
-      console.log("User Signed In:", userCredential.user);
+      const uniqueId = userCredential.user.uid;
+      const q = query(collection(db, "userData"), where("uid", "==", uniqueId));
+      const querySnapshot = await getDocs(q);
+
+      if (!querySnapshot.empty) {
+        const doc = querySnapshot.docs[0];
+        console.log(doc);
+        dispatch(setUserId(doc.id));
+      } else {
+        console.log("No such document!");
+      }
+      console.log("User Logged In:");
       alert("Login Successful");
-      // window.location.href = "/";
-      navigate('/');
+      navigate("/");
       dispatch(logIn());
+      dispatch(setUserEmail(formData.email));
     } catch (error) {
       if (
         (error.code === "auth/user-not-found" ||
@@ -47,50 +69,57 @@ function Login() {
       }
     }
   };
-  const navigate = useNavigate();
-
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn); 
-  const dispatch = useDispatch()
 
   return (
-    <div className="form-tab">
-      <form onSubmit={handleSubmit} className="form">
-        <h2 className="title-heading">Login Form</h2>
-        <br />
-        <label htmlFor="email" className="input-heading">
-          Email:
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="inputField"
-          required
-        />
-        <br />
-        <label htmlFor="password" className="input-heading">
-          Password:
-        </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          className="inputField"
-          required
-        />
-        <br />
-        <button type="submit" className="submit-btn" >Login</button>
-      </form>
-      <p>
-        Don't have an account?<a href="/interneeSignUp"> SignUp </a>
-      </p>
-      <p>
-        Forgot Password?<a href="/forgotPassword"> Reset Password </a>
-      </p>
+    <div>
+      <div className="goBack-btn">
+        <Link to="/" className="btn-text">
+          <button type="submit" className="submit-btn">
+            <i className="bi bi-arrow-left"></i>Home Page
+          </button>
+        </Link>{" "}
+      </div>
+      <div className="form-tab">
+        <form onSubmit={handleSubmit} className="form">
+          <h2 className="title-heading">Login Form</h2>
+          <br />
+          <label htmlFor="email" className="input-heading">
+            Email:
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="inputField"
+            required
+          />
+          <br />
+          <label htmlFor="password" className="input-heading">
+            Password:
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            className="inputField"
+            required
+          />
+          <br />
+          <button type="submit" className="submit-btn">
+            Login
+          </button>
+        </form>
+        <p>
+          Don't have an account?<Link to="/interneeSignUp">SignUp</Link>
+        </p>
+        <p>
+          Forgot Password?<Link to="/forgotPassword">Reset Password</Link>
+        </p>
+      </div>
     </div>
   );
 }

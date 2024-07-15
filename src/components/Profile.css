@@ -1,15 +1,121 @@
-
 .btn-login {
-    width: 170px;
-    height: 40px;
-    border-radius: 10px 10px;
-    color: #43a724;
-    background-color: white;
-    font-size: 18px;
-    font-weight: 700;
-    border: 2px solid black;
-  }
-  .btn-text {
-    text-decoration: none;
-    color: #43a724;
-  }
+  width: 170px;
+  height: 40px;
+  border-radius: 10px 10px;
+  color: #43a724;
+  background-color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid black;
+}
+.btn-text {
+  text-decoration: none;
+  color: #43a724;
+}
+.headerOfProfilePage {
+  width: 100%;
+  height: 5rem;
+  display: grid;
+  grid-template-columns: 5rem 2fr 2fr 2fr 5rem;
+  flex-wrap: wrap;
+}
+.goBack-btn {
+  display: flex;
+  grid-column: 2/3;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.profilePageHeading {
+  display: flex;
+  grid-column: 3/4;
+  justify-content: center;
+  align-items: center;
+}
+.goBack-btn2 {
+  display: flex;
+  grid-column: 4/5;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.userInfo {
+  width: 100%;
+  height: 18rem;
+  display: grid;
+  grid-template-columns: 3rem 2fr 2fr 3rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  justify-content: space-between;
+  gap: 7px;
+  border: 3px solid #43a724;
+  border-radius: 20px !important;
+  width: 600px;
+  height: 100%;
+  margin-top: 50px;
+  margin-left: 400px;
+  margin-bottom: 50px;
+}
+.column1 {
+  display: flex;
+  grid-column: 2/3;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.column2 {
+  display: flex;
+  grid-column: 3/4;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  color: black;
+}
+.main-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #43a724;
+}
+.formButtons {
+  width: 100%;
+  height: 12rem;
+  display: grid;
+  grid-template-columns: 10rem 2fr 2fr 10rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  justify-content: space-between;
+  gap: 7px;
+}
+.updateAndDeleteButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.Delete-btn {
+  background-color: #ff0000;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: 3px solid #be1717;
+  border-radius: 20px !important;
+  color: white;
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}

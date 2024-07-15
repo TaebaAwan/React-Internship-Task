@@ -1,9 +1,9 @@
-import React from 'react';
-import HeroSection from '../HeroSection';
-import Cards from '../Card';
-import Carousel from '../Carousel';
-import { SliderData } from '../CarouselData';
-import Blog from '../Blog';
+import React from "react";
+import HeroSection from "../HeroSection";
+import Cards from "../Card";
+import Carousel from "../Carousel";
+import { SliderData } from "../CarouselData";
+import Blog from "../Blog";
 
 function Home() {
   return (
@@ -11,11 +11,9 @@ function Home() {
       <HeroSection />
       <Cards />
       <Carousel slides={SliderData} />
-      <Blog/>
-     
+      <Blog />
     </>
-  )
+  );
 }
 
-export default Home
-
+export default Home;

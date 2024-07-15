@@ -7,7 +7,7 @@ import flyImage from "../images/3persons.webp";
 import bg from "../images/whyInterneebg.png";
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Cursor } from "react-simple-typewriter";
 import { BiGasPump } from "react-icons/bi";
 
@@ -43,10 +43,14 @@ export default function HeroSection() {
 
       <div className="Buttons">
         <button className="portal">
-        <Link to="/jobPortal" className="btn-text">Job Portal</Link>
+          <Link to="/jobPortal" className="btn-text">
+            Job Portal
+          </Link>
         </button>
         <button className="lms">
-          <Link to="/LMS" className="btn-text">Our LMS</Link>
+          <Link to="/LMS" className="btn-text">
+            Our LMS
+          </Link>
         </button>
       </div>
 

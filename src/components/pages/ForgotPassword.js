@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../../src/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 import "../../components/Form.css";
+import { Link } from "react-router-dom";
 
 function ForgotPassword() {
   const [formData, setFormData] = useState({
@@ -36,28 +37,38 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="form-tab">
-      <form onSubmit={handleSubmit} className="form">
-        <h2 className="title-heading">Reset Password </h2>
-        <br />
-        <label htmlFor="email" className="input-heading">
-          Email:
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="inputField"
-          required
-        />
-        <br />
-        <button type="submit" className="submit-btn">
-          Reset
-        </button>
-        <br />
-      </form>
+    <div>
+      {" "}
+      <div className="goBack-btn">
+        <Link to="/" className="btn-text">
+          <button type="submit" className="submit-btn">
+            <i className="bi bi-arrow-left"></i>Home Page
+          </button>
+        </Link>
+      </div>
+      <div className="form-tab">
+        <form onSubmit={handleSubmit} className="form">
+          <h2 className="title-heading">Reset Password </h2>
+          <br />
+          <label htmlFor="email" className="input-heading">
+            Email:
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="inputField"
+            required
+          />
+          <br />
+          <button type="submit" className="submit-btn">
+            Reset
+          </button>
+          <br />
+        </form>
+      </div>
     </div>
   );
 }
